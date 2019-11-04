@@ -41,7 +41,7 @@ class Teacher(Person):
         self.grade = grade
     def get_details(self):
         return "{} teaches {}.".format(self.name,self.papers)
-    def get_details(self):
+    def get_grade(self):
         s = []
         common = Counter(self.grade).most_common(4)
         for i,j in common:
@@ -52,9 +52,9 @@ class Teacher(Person):
 person1 = Person('djsh')
 if sys.argv[1] == 'student':
     student1 = Student('hjds','djk',2001,sys.argv[2])
-    student1.get_details()
+    print(student1.get_details())
     student1.get_grade()
 else:
     teacher1 = Teacher('pp',['python','C++'],sys.argv[2])
-    teacher1.get_details()
+    print(teacher1.get_details())
     teacher1.get_grade()
